@@ -1,0 +1,149 @@
+@use "../vars/color" as color-var;
+@use "../vars/fonts" as fontGuide;
+@use "../components/buttons" as style-buttons;
+.header {
+    padding: 24px 25px ;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: repeat(2, max-content);
+    --state-close: scale(0);
+    --state-hamburguer:scale(1);
+    --state-menu: translate(-100%);
+    &__logo{
+        display: inline;
+        width: 148px;
+        z-index: 3;
+        
+    }
+    &__icon-menu, &__icon-close{
+        width: 20px;
+        height: 20px;
+        grid-column: -2/-1;
+        grid-row: 1/2;
+        transition: .4s transform;
+        background-color: var(--color-preuba);
+        z-index: 3;
+        :hover{
+            cursor: pointer;
+        }
+    }
+    &__icon-menu{
+        transform: var(--state-hamburguer);   
+    }
+    &__icon-close{
+        transform: var(--state-close);
+    }
+    .nav__links {
+        background-color: color-var.$second-colo-text;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0;
+        display: grid;
+        grid-template-rows: 4fr 1fr;
+        align-content: center;
+        justify-content: center;
+        z-index: 2;
+        transform: var(--state-menu);
+        transition: .3s transform;
+        ul {
+            display: grid;
+            align-content: center;
+            justify-content: center;
+            gap: 25px;
+            .nav__item{
+                width: 75vw;
+                text-align: center;
+                padding: 10px 0;
+                border-block-end: solid 2px color-var.$primary-color-text;
+            }
+            .button--login{                
+                @include style-buttons.buttons;
+                background-color: color-var.$second-color;
+                color: color-var.$second-color-light;
+                &:hover{
+                    border: 2px solid color-var.$second-color;
+                }
+            }
+
+        }
+        a{
+            color: color-var.$second-color-light;
+            @include fontGuide.formate-text;
+            color: white;
+
+        }
+
+    }
+    .nav__links .social_networks{
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        &--img{
+         width: 30px;
+            svg{
+                path {
+                    &:hover{
+                        fill: color-var.$second-color;
+                    }
+                }
+            }
+        }
+
+    }
+}
+.header:target{
+    --state-menu: translate(0);
+    --state-close: scale(1);
+    --state-hamburguer:scale(0);
+    .header__logo{        
+        path{
+            fill: color-var.$second-color-light;
+        }
+    } 
+}
+@media (min-width: 1024px) {
+    .header{
+        --state-hamburguer:scale(0);
+        --state-menu: translate(0);
+        padding: 10px 10%;
+        .nav__links{
+            padding: 0;
+            background-color: unset;
+            position: unset;
+            gap: 1.5em;
+            grid-auto-flow: column;
+            transform: unset;
+            grid-column: -2/-1;
+            grid-row: 1/2;
+            ul {
+                display: flex;
+                .nav__item{
+                    width: auto;
+                    border: none;
+                    .nav__link{
+                        letter-spacing: none;
+                        color: color-var.$primary-color-text;
+                        &:hover{
+                            color: color-var.$second-color;
+                        }
+                    }
+                }
+                .button--login .nav__link{
+                    color: color-var.$second-color-light;
+                }
+        
+            }
+            .social_networks{
+                display: none;
+            }
+        }
+
+    }
+    header:target{
+        --state-close: scale(0);
+    }
+}

@@ -1,0 +1,80 @@
+@use "../components/content_img" as contImg;
+@use "../vars/fonts" as fontGuide;
+@use "../vars/color" as color-var;
+@use "../components/buttons" as style-buttons;
+.content-Questions{
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-content: center;
+    justify-content: center;
+    .active{
+        .answer{
+            display: block;
+        }
+        .question{
+            span{
+                svg{
+                    transform: rotate(180deg);
+                    path{
+                        stroke: rgb(255, 0, 0);
+                    }
+                }
+            }
+        }
+    }
+    &--text{
+        text-align: center;
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &--question{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-block-end: solid 2px color-var.$primary-color-text;
+            padding-block-end: 10px;
+            .question {
+                @include fontGuide.formate-title;
+                font-size: 1.6rem;
+                margin: 10px 0;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+                span {
+                    width: 25px;
+                    height: 17px;
+                    margin-inline-end: 10px;
+                }
+            }
+            &:hover{
+                cursor: pointer;
+            }
+            .answer{
+                display: none;
+                overflow: hidden;
+                margin-inline-end: 20px;
+            }
+
+        }
+    }
+    &--buttons{
+        display: flex;
+        justify-content: center;
+        .buttons {
+            @include style-buttons.buttons;
+            background-color: color-var.$primary-color;
+            color: color-var.$primary-background;
+            &:hover{
+                border-color: color-var.$primary-color;
+                color: color-var.$primary-color;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,15 @@
+
+@use "../vars/color" as color-var;
+@use "../vars/fonts" as fontGuide;
+ @mixin buttons {
+    @include fontGuide.formate-botton;
+    font-family: 'Rubik', sans-serif;
+    background-color: rgba(247, 247, 247, 255);
+    padding: 10px 14px;
+    border-radius: 6px;
+    &:hover{
+        background-color: rgba(247, 247, 247, 255);
+        cursor: pointer;
+        border: 2px solid color-var.$primary-color-text;
+    }
+}

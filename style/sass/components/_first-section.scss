@@ -1,0 +1,50 @@
+@use "../components/content_img" as contImg;
+@use "../vars/fonts" as fontGuide;
+@use "../vars/color" as color-var;
+@use "../components/buttons" as style-buttons;
+
+.first-section {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap-reverse;
+
+    &__text{
+       
+       flex: 50%;
+       padding: 24px;
+       display: flex;
+       flex-direction: column;
+       text-align: center;
+       justify-content: space-around;
+       font-family: 'Rubik', sans-serif;
+       gap: 20px;
+
+       &--content-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        .buttons{
+          @include style-buttons.buttons;
+        }
+        :first-child{
+          background-color:color-var.$primary-color;
+          color: white;
+          &:hover{
+            color: color-var.$primary-color;
+            border-color: color-var.$primary-color;
+          }
+        }
+        :nth-child(2){
+          @include color-var.shadow;
+
+        }
+        
+       }
+       
+    }
+    .image {
+  
+      @include contImg.formate-image;
+    }
+}

@@ -1,0 +1,47 @@
+//292 374
+@use "../vars/fonts" as fontGuide;
+@use "../vars/color" as color-var;
+@use "../components/buttons" as style-buttons;
+@mixin card{
+    background-color: color-var.$primary-background;
+    width: 292px;
+    height: 376px;
+    // border: 2px solid black ;
+    padding-block-start: 30px;
+    border-radius: 20px;
+    @include fontGuide.formate-text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    &__picture{
+        width: 130px;
+    }
+    &__content-text {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        h3{
+            @include fontGuide.formate-title;
+        }
+    }
+    &__content-button{
+        width: 100%;
+        display: flex;
+        border-block-start: 4px dotted rgba(222, 220, 234, 255);
+        text-align: center;
+        justify-content: center;
+
+        button{
+            margin: 15px ;
+            @include style-buttons.buttons;
+            color: color-var.$primary-background;
+            background-color: color-var.$primary-color;
+            &:hover {
+                color: color-var.$primary-color;
+                border-color: color-var.$primary-color;
+            }
+        }
+    }
+}

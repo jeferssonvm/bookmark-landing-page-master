@@ -1,0 +1,44 @@
+@use "../vars/fonts" as fontGuide;
+@use "../components/cards" ;
+.extension-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    &__browsers{
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        gap: 47px;
+        .card{
+            @include cards.card;
+            box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+        }
+    }
+    @media (min-width: 1024px) {
+        &__browsers{
+            height: 550px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(8, 68px);
+            gap: 0;
+            margin: auto;
+            justify-items: center;
+            .card--chrome{
+                grid-row: 1 / 5;
+                grid-column: 1/2;
+            }
+            .card--firefox{
+                grid-row: 2 / 6;
+                grid-column:  2/ 3;
+            }
+            .card--opera{
+                grid-row: 3 / 7;
+                grid-column: 3 / 4;
+            }
+        }
+    }
+    
+}

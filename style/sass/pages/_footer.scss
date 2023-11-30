@@ -1,0 +1,38 @@
+@use "../vars/color" as color-var;
+@use "../vars/fonts" as fontGuide;
+.footer {
+    background-color: color-var.$second-colo-text;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    p{
+        &:hover{
+            color: color-var.$second-color;
+            cursor: pointer;
+        }
+    }
+    .social_networks{
+        display: flex;
+        gap: 30px;
+        &--img{
+            svg{
+                path {
+                    &:hover{
+                        fill: color-var.$second-color;
+                    }
+                }
+            }
+        }
+        
+    }
+    @media (min-width: 1024px) {
+       flex-direction: row;
+       padding-inline: 15%;
+       .social_networks{
+        margin: 0 5% 0 auto;
+       }
+
+      }
+}

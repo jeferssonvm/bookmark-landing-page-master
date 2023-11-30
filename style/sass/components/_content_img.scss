@@ -1,0 +1,17 @@
+@mixin formate-image{
+    flex: 50%;
+    min-width: 320px;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+    &__svg {
+      
+      padding: 20px 0;
+      width: 100%;  
+      align-content: end;
+      grid-column: 2/4;
+      grid-row: 1/4;
+      z-index: 1;
+    }
+    
+  }

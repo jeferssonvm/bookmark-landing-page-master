@@ -1,0 +1,42 @@
+@use "../vars/color" as color-var;
+@use "../vars/fonts" as fontGuide;
+@use "../components/buttons" as style-buttons;
+
+.section-contact{
+    width: 100vw;
+    padding: 24px;
+    background-color: color-var.$primary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    p{
+        color: color-var.$second-color-light;
+    }
+    h2 {
+        color: color-var.$second-color-light;
+        text-align: center;
+    }
+    &__form{
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .section-contact__form--email{
+            width: 307px;
+            height: 42px;
+            border-radius: 10px
+        }
+        .buttons{
+            @include style-buttons.buttons;
+            background-color: color-var.$second-color;
+            color: color-var.$primary-background;
+            &:hover{
+                color: color-var.$second-color;
+                border-color: color-var.$second-color;
+            }
+        }
+    }
+}

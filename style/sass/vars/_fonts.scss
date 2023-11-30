@@ -1,0 +1,31 @@
+@use "./color" as colors;
+@mixin formate-title{
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    line-height: 30px;
+    color: colors.$second-colo-text;
+}
+@mixin formate-text{
+    font-family: 'Rubik', sans-serif;
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: colors.$primary-color-text;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Rubik', sans-serif;
+}
+p {
+
+    @include formate-text()
+
+}
+h2{
+    @include formate-title()
+}
+@mixin formate-botton{
+    @include formate-text();
+    font-weight: 500;
+}

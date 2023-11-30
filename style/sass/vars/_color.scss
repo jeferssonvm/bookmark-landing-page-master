@@ -1,0 +1,10 @@
+$primary-color:hsl(231, 69%, 60%);
+$second-color:hsl(0, 94%, 66%);
+$primary-color-text:hsl(229, 8%, 60%);
+$second-colo-text:hsl(229, 31%, 21%);
+$primary-background:white;
+$second-color-light:rgba(247, 247, 247, 255);
+@mixin shadow{
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+
+}

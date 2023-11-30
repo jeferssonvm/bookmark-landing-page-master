@@ -1,0 +1,47 @@
+html {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+p {
+  font-family: "Rubik", sans-serif;
+  line-height: 24px;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.first-section {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+.first-section__text {
+  flex: 50%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  font-family: "Rubik", sans-serif;
+  gap: 20px;
+}
+.first-section__text--content-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.first-section__text--content-buttons :first-child {
+  font-weight: 400;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  background-color: aqua;
+  color: white;
+}
